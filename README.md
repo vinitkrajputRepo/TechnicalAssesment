@@ -30,7 +30,7 @@ The solution implements the following database schema:
 
 ### Product Table
 ```sql
-CREATE TABLE [dbo].[Product]
+CREATE TABLE [dbo].[Products]
 (
     [Id] INT NOT NULL PRIMARY KEY IDENTITY (1,1),
     [ProductName] NVARCHAR(255) NOT NULL,
@@ -109,8 +109,8 @@ Solution/
 2. **Update connection string** in `src/API/appsettings.json`
    ```json
    "ConnectionStrings": {
-     "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=ProductsDb;Trusted_Connection=true;MultipleActiveResultSets=true"
-   }
+  "DefaultConnection": "Server=DESKTOP-KNKB0H7;Database=ProductsDB;Trusted_Connection=true;TrustServerCertificate=True;MultipleActiveResultSets=true" //it is not prefered way to store connection string , we can use azure key valut or secret.json
+}
    ```
 
 3. **Restore dependencies**
